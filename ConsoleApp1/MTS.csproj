@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="Bus.cs" />
     <Compile Include="BusRoute.cs" />
+    <Compile Include="coordinate.cs" />
     <Compile Include="ICoordinate.cs" />
     <Compile Include="BusSystem.cs" />
+    <Compile Include="SimEventQueue.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="SimEvent.cs" />
     <Compile Include="BusRider.cs" />

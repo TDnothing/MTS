@@ -10,22 +10,24 @@ namespace MTS
 {
     public class Simulation
     {
-        BusSystem _busSystem = new BusSystem();
-        System.IO.StreamReader file =
-            new System.IO.StreamReader(@"D:\OMSCS\SoftwareArchDesign\test.txt");
-        public void RunApp()
+        //BusSystem BusSystem = new BusSystem();
+
+        public void CreateSimulation(StreamReader file)
         {
 
             Readfile(file);
-            MoveNextBus();
-            MoveNextBus();
-            MoveNextBus();
-            MoveNextBus();
-            MoveNextBus();
-            MoveNextBus();
-            MoveNextBus();
-            MoveNextBus();
-            MoveNextBus();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
+            MoveNextBusButtonClick();
             ResetBus();
         }
 
@@ -38,50 +40,21 @@ namespace MTS
             while ((line = file.ReadLine()) != null)
             {
                 List<string> result = line.Split(',').ToList();
-                _busSystem.CreateObject(result);
+                BusSystem.CreateObject(result);
                 System.Console.WriteLine(line);
                 counter++;
             }
 
         }
-        public void MoveNextBus()
+        public void MoveNextBusButtonClick()
         {
-            var e1 = _busSystem.GetLowestRankEvent();
-            //int id = e1.GetObjectId(e1);
-
-            Bus currentBus = _busSystem.GetBus(e1._objectId);
-            BusRoute currentRoute = _busSystem.GetBusRoute(currentBus.RouteId);
-
-            int currentStopId = currentRoute.GetStopByBusLocation(currentBus.Location).Item2;
-            var resut = currentRoute.GetStopByBusLocation(currentBus.Location + 1);
-            int nextStopId = resut.Item2;
-            int nextStopLocation = resut.Item1;
-
-            BusStop currentStop = _busSystem.GetBusStop(currentStopId);
-            BusStop nextStop = _busSystem.GetBusStop(nextStopId);
-
-            //Bus Moving
-            int time = BusStop.CalculateTimeWithSpeed(currentStop, nextStop, currentBus.Speed);
-            SimEvent e0 = new SimEvent(time + e1._rank, "Move Bus", currentBus.Id);
-            _busSystem.AddSimEventsQueue(e0);
-
-            //Now the Bus arrived
-            int offBus = BusRider.GetRiderOffBus(nextStopId, time);
-            int onBus = BusRider.GetRiderOnBus(nextStopId, time);
-
-            currentBus.UpdateBusPassenger(offBus, onBus);
-            currentBus.UpdateBusLocation(nextStopLocation);
-            nextStop.UpdateStopPassenger(onBus, offBus);
-
-            Console.WriteLine("rank: {0}: move_bus ID: {1}", e1._rank, currentBus.Id);
-            Console.WriteLine("the bus is at stop: {0} -  {1}", currentStop.Id, currentStop._name);
-            Console.WriteLine("the bus is heading: {0} -  {1}", nextStop.Id, nextStop._name);
+          BusSystem.MoveNextBus();
         }
 
         public void ResetBus()
         {
-            _busSystem = new BusSystem();
-            Readfile(file);
+           // BusSystem = new BusSystem();
+            //Readfile(file);
         }
 
 

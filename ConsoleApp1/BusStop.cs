@@ -4,18 +4,19 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp1;
 
 
 namespace MTS
 {
-    public class BusStop: ICoordinate
+    public class BusStop: Coordinate
     {
         public int Id;
         public string _name;
         private int _riders;
         private static int nextID = 1000;
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        private double Latitude { get; set; }
+        private double Longitude { get; set; }
         public BusStop(int ID, string name, int riders, double latitude, double longitude)
         {
             Id = ID;
@@ -37,9 +38,14 @@ namespace MTS
             return travel_time;
         }
 
-        public void UpdateStopPassenger(int onbus, int offbus)
+        public void UpdateStopRidersByBus(int onbus, int offbus)
         {
             _riders += (onbus + offbus);
+        }
+
+        public void UpdateStopRidersByTime(int time)
+        {
+
         }
     }
 }

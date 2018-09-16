@@ -13,9 +13,11 @@ namespace MTS
     {      
         static void Main(string[] args)
         {
+            System.IO.StreamReader file =
+                new System.IO.StreamReader(@"D:\OMSCS\SAD\Assignment2\MTS\MTS\JavaPrototype\test_scenario.txt");
             Simulation sc = new Simulation();
 
-            sc.RunApp();
+            sc.CreateSimulation(file);
 
 
             //ResetBus();           

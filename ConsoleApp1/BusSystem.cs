@@ -8,43 +8,36 @@ namespace MTS
 {
     public class BusSystem
     {
-        public  List<Bus> Buses = new List<Bus>();
-        public  List<BusStop> BusStops = new List<BusStop>();
-        public  List<BusRoute> BusRoutes = new List<BusRoute>();
-        public  List<SimEvent> Events = new List<SimEvent>();
+        public static List<Bus> Buses = new List<Bus>();
+        public static List<BusStop> BusStops = new List<BusStop>();
+        public static List<BusRoute> BusRoutes = new List<BusRoute>();
+        public static int BusSystemLogicalTime;
+        
 
-        public  Bus GetBus(int id)
+        public static Bus GetBus(int id)
         {
             return Buses.FirstOrDefault(bus => bus.Id == id);
         }
 
-        public  BusStop GetBusStop(int id)
+        public static BusStop GetBusStop(int id)
         {
             return BusStops.FirstOrDefault(stop => stop.Id == id);
         }
-        public  BusRoute GetBusRoute(int id)
+        public static BusRoute GetBusRoute(int id)
         {
             return BusRoutes.FirstOrDefault(route => route.Id == id);
         }
-        public  void AddSimEventsQueue(SimEvent e)
+
+        public static void MoveNextBus()
         {
-            Events.Add(e);
-            OrderQueue();
+            var e1 = SimEventQueue.GetLowestRankEvent();
+            e1.ExecuteEvent();
+            //int id = e1.GetObjectId(e1);
+
+            
         }
 
-        public SimEvent GetLowestRankEvent()
-        {
-            SimEvent simE = Events.FirstOrDefault();
-            Events.RemoveAt(0);
-            return simE;
-        }
-
-        private void OrderQueue()
-        {
-            Events.Sort((x, y) => x._rank.CompareTo(y._rank));
-        }
-
-        public void CreateObject(List<string> command)
+        public static void CreateObject(List<string> command)
         {
             switch (command[0])
             {
@@ -67,7 +60,7 @@ namespace MTS
                     break;
                 case "add_event":
                     SimEvent simEvent = new SimEvent(Convert.ToInt32(command[1]), command[2], Convert.ToInt32(command[3]));
-                    Events.Add(simEvent);
+                    SimEventQueue.AddSimEventsQueue(simEvent);
                     break;
                 default:
                     break;

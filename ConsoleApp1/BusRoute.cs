@@ -9,7 +9,7 @@ namespace MTS
     public class BusRoute
     {
         public int Id;
-        private int _number;
+        public int _number;
         public string _name;
         private List<int> _busStops = new List<int>();
 
@@ -25,7 +25,7 @@ namespace MTS
             _busStops.Add(stopid);
         }
 
-        public Tuple<int, int> GetStopByBusLocation(int location)
+        public Tuple<int, int> GetBusStopInfoByBusLocation(int location)
         {
             if (location >= _busStops.Count) return Tuple.Create(0, _busStops[0]);
             else return Tuple.Create(location, _busStops[location]);

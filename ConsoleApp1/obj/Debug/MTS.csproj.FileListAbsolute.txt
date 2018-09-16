@@ -5,3 +5,10 @@ F:\ConsoleApp1\ConsoleApp1\obj\Debug\MTS.csprojResolveAssemblyReference.cache
 F:\ConsoleApp1\ConsoleApp1\obj\Debug\MTS.csproj.CoreCompileInputs.cache
 F:\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 F:\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\obj\Debug\MTS.csprojResolveAssemblyReference.cache
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\obj\Debug\MTS.csproj.CoreCompileInputs.cache
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
