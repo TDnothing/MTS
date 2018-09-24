@@ -41,6 +41,10 @@ namespace MTS
         {
             switch (command[0])
             {
+                case "add_depot":
+//                    BusStop busStop0 = new BusStop(Convert.ToInt32(command[1]), command[2],0, Convert.ToDouble(command[3]), Convert.ToDouble(command[4]));
+//                    BusStops.Add(busStop0);
+                    break;
                 case "add_bus":
                     Bus bus1 = new Bus(Convert.ToInt32(command[1]), Convert.ToInt32(command[2]), Convert.ToInt32(command[3]), Convert.ToInt32(command[4]), Convert.ToInt32(command[5]),
                         Convert.ToInt32(command[6]), Convert.ToInt32(command[7]), Convert.ToInt32(command[8]));

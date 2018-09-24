@@ -13,8 +13,9 @@ namespace MTS
     {      
         static void Main(string[] args)
         {
+
             System.IO.StreamReader file =
-                new System.IO.StreamReader(@"D:\OMSCS\SAD\Assignment2\MTS\MTS\JavaPrototype\test_scenario.txt");
+                new System.IO.StreamReader(@"D:\OMSCS\SAD\Assignment5\test5_scenic_multibus.txt");
             Simulation sc = new Simulation();
 
             sc.CreateSimulation(file);

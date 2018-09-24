@@ -11,7 +11,7 @@ namespace MTS
         public int Id;
         public int _number;
         public string _name;
-        private List<int> _busStops = new List<int>();
+        private readonly List<int> _busStops = new List<int>();
 
         public BusRoute(int id, int number, string name)
         {
@@ -28,7 +28,8 @@ namespace MTS
         public Tuple<int, int> GetBusStopInfoByBusLocation(int location)
         {
             if (location >= _busStops.Count) return Tuple.Create(0, _busStops[0]);
-            else return Tuple.Create(location, _busStops[location]);
+            
+            return Tuple.Create(location, _busStops[location]);
         }
     }
 }

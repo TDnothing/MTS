@@ -16,19 +16,12 @@ namespace MTS
         {
 
             Readfile(file);
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            MoveNextBusButtonClick();
-            ResetBus();
+            for (int i = 0; i < 20; i++)
+            {
+                MoveNextBusButtonClick();
+            }
+
+            //ResetBus();
         }
 
         public void Readfile(StreamReader file)

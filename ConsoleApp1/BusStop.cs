@@ -34,7 +34,7 @@ namespace MTS
             double distance = 70.0 * Math.Sqrt(Math.Pow((stopA.Latitude -
             stopB.Latitude), 2) + Math.Pow((stopA.Longitude - stopB.Longitude), 2));
 
-            int travel_time = 1 + (Convert.ToInt32(distance) * 60 / currentBusSpeed);
+            int travel_time = 1 + (int)distance * 60 / currentBusSpeed;
             return travel_time;
         }
 

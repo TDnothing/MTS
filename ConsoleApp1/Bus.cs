@@ -55,18 +55,16 @@ namespace MTS
             BusStop nextStop = BusSystem.GetBusStop(nextStopId);
 
             //Bus left current stop
-            int offBus = BusRider.GetRiderOffBus(nextStopId, rank);
-            int onBus = BusRider.GetRiderOnBus(nextStopId, rank);
+           // int offBus = BusRider.GetRiderOffBus(nextStopId, rank);
+           // int onBus = BusRider.GetRiderOnBus(nextStopId, rank);
 
-            UpdateBusPassenger(offBus, onBus);
+            //UpdateBusPassenger(offBus, onBus);
             UpdateBusLocation(nextStopLocation);
-            nextStop.UpdateStopRidersByBus(onBus, offBus);
+            //nextStop.UpdateStopRidersByBus(onBus, offBus);
 
             int time = BusStop.CalculateTimeWithSpeed(currentStop, nextStop, Speed);
 
-            Console.WriteLine("the bus is at route: {0}", currentRoute.Id);
-            Console.WriteLine("the bus is at stop: {0} -  {1}", currentStop.Id, currentStop._name);
-            Console.WriteLine("the bus is heading: {0} -  {1}", nextStop.Id, nextStop._name);
+            Console.WriteLine("b:{0}->s:{1}@{2}//p:{3}/f:{4}", Id,nextStopId,time+ rank, 0,0);
             return time;
 
         }
