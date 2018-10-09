@@ -1,0 +1,6 @@
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\bin\Release\ConsoleApp1.exe.config
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\bin\Release\ConsoleApp1.exe
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\bin\Release\ConsoleApp1.pdb
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\obj\Release\MTS.csproj.CoreCompileInputs.cache
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\obj\Release\ConsoleApp1.exe
+D:\OMSCS\SAD\Assignment2\MTS\MTS\ConsoleApp1\obj\Release\ConsoleApp1.pdb
