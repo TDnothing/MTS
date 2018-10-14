@@ -13,6 +13,16 @@ namespace MTS
         public static List<BusRoute> BusRoutes = new List<BusRoute>();
         public static int BusSystemLogicalTime;
         
+        public static Dictionary<int, Bus> HBus = new Dictionary<int, Bus>();
+
+        public static Bus GetHBus(int busid)
+        {
+            if (HBus.ContainsKey(busid))
+            {
+                return HBus[busid];
+            }
+            return null;
+        }
 
         public static Bus GetBus(int id)
         {
