@@ -1,5 +1,7 @@
 package MTS;
 
+import javafx.util.Pair;
+
 public class Bus {
     public int Id;
     public int RouteId;
@@ -31,7 +33,7 @@ public class Bus {
         BusRoute currentRoute = BusSystem.GetBusRoute(RouteId);
 
         int currentStopId = currentRoute.GetBusStopInfoByBusLocation(Location).getValue();
-        var resut = currentRoute.GetBusStopInfoByBusLocation(Location + 1);
+        Pair<Integer,Integer> resut = currentRoute.GetBusStopInfoByBusLocation(Location + 1);
         int nextStopId = resut.getValue();
         int nextStopLocation = resut.getKey();
 

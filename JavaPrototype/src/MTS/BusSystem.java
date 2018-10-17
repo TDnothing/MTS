@@ -1,5 +1,6 @@
 package MTS;
 
+import java.awt.*;
 import java.util.HashMap;
 
 public class BusSystem {
@@ -19,7 +20,7 @@ public class BusSystem {
 
     public static void MoveNextBus()
     {
-        var e1 = SimEventQueue.GetLowestRankEvent();
+        SimEvent e1 = SimEventQueue.GetLowestRankEvent();
         e1.ExecuteEvent();
         //int id = e1.GetObjectId(e1);
     }
