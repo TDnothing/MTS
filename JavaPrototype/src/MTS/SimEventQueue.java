@@ -1,24 +1,27 @@
 package MTS;
 
-import javafx.scene.layout.Priority;
-
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.List;
+import javafx.scene.layout.Priority;
+import java.util.*;
 
 
 public class SimEventQueue {
     public static LinkedList<SimEvent> Events = new LinkedList<>();
+
+    public static Comparator<SimEvent> rankComparator = (c1, c2) -> (c1._rank - c2._rank);
+    public static PriorityQueue<SimEvent> eventQueue = new PriorityQueue(100, rankComparator);
     public static void AddSimEventsQueue(SimEvent e)
     {
-        Events.add(e);
-        OrderQueue();
+        eventQueue.add(e);
+//        Events.add(e);
+//        OrderQueue();
     }
 
     public static SimEvent GetLowestRankEvent()
     {
-        return Events.pop();
+        return eventQueue.poll();
+       // return Events.pop();
     }
 
     private static void OrderQueue()
