@@ -22,10 +22,17 @@ public class BusRoute {
         _busStops.add(stopid);
     }
 
-    public Pair<Integer,Integer> GetBusStopInfoByBusLocation(Integer location)
+    public Integer GetBusStopInfoByBusLocation(Integer location)
     {
-        if (location >= _busStops.size()) return new Pair<>(0, (Integer) _busStops.get(0));
+        if (location >= _busStops.size()) return  (Integer) _busStops.get(0);
 
-        return new Pair<>(location, (Integer)_busStops.get(location));
+        return (Integer) _busStops.get(location);
+    }
+
+    public Integer GetBusLocationByBusLocation(Integer location)
+    {
+        if (location >= _busStops.size()) return 0;
+
+        return location;
     }
 }

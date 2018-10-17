@@ -32,10 +32,9 @@ public class Bus {
     {
         BusRoute currentRoute = BusSystem.GetBusRoute(RouteId);
 
-        int currentStopId = currentRoute.GetBusStopInfoByBusLocation(Location).getValue();
-        Pair<Integer,Integer> resut = currentRoute.GetBusStopInfoByBusLocation(Location + 1);
-        int nextStopId = resut.getValue();
-        int nextStopLocation = resut.getKey();
+        int currentStopId = currentRoute.GetBusStopInfoByBusLocation(Location);
+        int nextStopId = currentRoute.GetBusStopInfoByBusLocation(Location + 1);
+        int nextStopLocation = currentRoute.GetBusLocationByBusLocation(Location + 1);
 
         BusStop currentStop = BusSystem.GetBusStop(currentStopId);
         BusStop nextStop = BusSystem.GetBusStop(nextStopId);
