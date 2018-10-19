@@ -1,0 +1,28 @@
+java -jar working_system.jar test0_instruction_demo.txt > result0.txt
+java -jar working_system.jar test1_express_singlebus.txt > result1.txt
+java -jar working_system.jar test2_connector_singlebus.txt > result2.txt
+java -jar working_system.jar test3_connector_multibus.txt > result3.txt
+java -jar working_system.jar test4_scenic_singlebus.txt > result4.txt
+java -jar working_system.jar test5_scenic_multibus.txt > result5.txt
+java -jar working_system.jar test6_perimeter_singlebus.txt > result6.txt
+java -jar working_system.jar test7_perimeter_multibus.txt > result7.txt
+java -jar working_system.jar test8_express_scenic.txt > result8.txt
+java -jar working_system.jar test9_perimeter_connector.txt > result9.txt
+java -jar working_system.jar test10_perimeter_scenic.txt > result10.txt
+java -jar working_system.jar test11_complete_same_event_start.txt > result11.txt
+java -jar working_system.jar test12_complete.txt > result12.txt
+
+
+fc result0.txt test0_solution.txt
+fc result1.txt test1_solution.txt
+fc result2.txt test2_solution.txt
+fc result3.txt test3_solution.txt
+fc result4.txt test4_solution.txt
+fc result5.txt test5_solution.txt
+fc result6.txt test6_solution.txt
+fc result7.txt test7_solution.txt
+fc result8.txt test8_solution.txt
+fc result9.txt test9_solution.txt
+fc result10.txt test10_solution.txt
+fc result11.txt test11_solution.txt
+fc result12.txt test12_solution.txt
